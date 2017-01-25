@@ -6,15 +6,21 @@ class CommentsController < ApplicationController
   def new
     @post = Post.find(params[:post_id])
     @comment = Comment.new
+    @comments = @post.comments
   end
 
   def create
-    @comment = Comment.new(post_params)
-    if current_user.comments.create(post_params)
-      redirect_to root_url
+    if logged_in?
+      @comment = Comment.new(comment_params)
+      if current_user.comments.create(comment_params)
+        redirect_to "new"
+      else
+        @errors = @comment.errors.full_messages
+        render "new"
+      end
     else
-      @errors = @comment.errors.full_messages
-      render "new"
+      flash[:danger] = "Please login or create an account"
+      redirect_to "new"
     end
   end
 
@@ -24,8 +30,8 @@ class CommentsController < ApplicationController
 
   private
 
-  def post_params
-    params.require(:comment).permit(:title, :url)
+  def comment_params
+    params.require(:comment).permit(:body)
   end
 
 end

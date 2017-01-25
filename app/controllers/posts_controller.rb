@@ -10,6 +10,9 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    # @post.id = current_user.id
+    #
+    #
     if current_user.posts.create(post_params)
       redirect_to root_url
     else

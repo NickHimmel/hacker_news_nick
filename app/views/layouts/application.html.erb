@@ -9,26 +9,25 @@
   </head>
 
   <body>
-    <div class="container">
-      <div class="row">
-        <div class="">
-          <h1>Hacker News</h1>
-        </div>
-        <div class="">
-          <ul>
-            <li>new</li>
-            <li>comments</li>
-            <li>submit</li>
-          </ul>
-        </div>
-        <div class="">
-          <ul>
-            <li>New Account</li>
-            <li>Login</li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    <header class="logo">
+      <h1> <%= link_to('Hacker News', root_path)%></h1>
+    </header>
+    <nav>
+      <ul class="nav-bar">
+        <li>new</li>
+        <li>comments</li>
+        <li>submit</li>
+        <% if logged_in? %>
+          <li> <%= current_user.username %> </li>
+          <li> <%= link_to('Profile', current_user) %> </li>
+          <li> <%= link_to('Logout', logout_path)%> </li>
+        <% else %>
+          <li> <%= link_to('create account', new_user_path)%> </li>
+          <li> <%= link_to('Login', login_path)%> </li>
+        <% end %>
+      </ul>
+    </nav>
+    <div> <%= render "shared/show" %> </div>
     <%= yield %>
   </body>
 </html>

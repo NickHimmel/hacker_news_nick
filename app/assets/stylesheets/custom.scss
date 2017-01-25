@@ -1,2 +1,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+.logo {
+  float: left;
+}
+
+.nav-bar {
+  float: left;
+}
+
+.nav-bar li{
+  display: inline;
+}

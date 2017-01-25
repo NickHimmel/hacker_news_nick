@@ -3,7 +3,7 @@
     <div class="col-sm-12 col-md-12 col-lg-12 form-container">
       <h2>Welcome</h2>
       <p class = "profile">user: <%= @user.username %> </p>
-      <p class = "profile">created: <%= @user.username %> </p>
+      <p class = "profile">created: <%= @user.created_at.strftime("%H") %> hours ago</p>
       <p class = "profile">email: <%= @user.email %> </p>
     </div>
   </div>

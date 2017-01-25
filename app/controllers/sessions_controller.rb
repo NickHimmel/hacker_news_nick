@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       log_in user
       redirect_to user
     else
-      flash[:danger] = ["Login information is incorrect"]
+      flash[:danger] = "Login information is incorrect"
       render "new"
     end
   end

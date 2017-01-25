@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   get "/logout", to: "sessions#destroy"
 
+  resources :posts, only: :index do
+    resources :comments, only: [:new, :create, :edit]
+  end
+  resources :comments, only: :index
   resources :users, except: :destroy do
     resources :posts, only: [:new, :create, :edit, :destroy]
   end

@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <article class="post">
+     <h3 class="post_title"> <%= link_to(@post.title, @post.url) %> </h3>
+      <p class="date_author"> <%= @post.vote %> points by <%= @post.user.username %> <%= @post.created_at.strftime("%H") %> ago | <%= @post.comments.count %> <%= link_to("comments", new_post_comment_path(@post)) %> </p>
+    </article>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-md-6 col-lg-6 form-container">
+      <%= form_for(:comment, url: post_comments_path) do |f| %>
+        <%= render "shared/error_messages" %>
+          <div class="form-group">
+            <%= f.label :body %>
+            <%= f.text_area :body, :class => "form-control", size: "24x6"%>
+          </div>
+        <%= f.submit "Add a comment", :class => "btn btn-default" %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -24,7 +24,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    if @post.update_attributes(post_params)
+    if @post.update(post_params)
       redirect_to root_url
     else
       @errors = @post.errors.full_messages

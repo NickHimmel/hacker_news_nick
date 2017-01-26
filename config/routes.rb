@@ -9,9 +9,13 @@ Rails.application.routes.draw do
 
   resources :posts, only: :index do
     resources :comments, only: [:new, :create, :edit]
+    resources :votes, only: [:create]
   end
-  resources :comments, only: :index
+  resources :comments, only: :index do
+    resources :votes, only: [:create]
+  end
   resources :users, except: :destroy do
     resources :posts, only: [:new, :create, :edit, :destroy]
   end
+
 end

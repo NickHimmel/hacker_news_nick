@@ -9,8 +9,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
-    if current_user.posts.create(post_params)
+    @post = current_user.posts.create(post_params)
+    if @post == Post.last
       redirect_to root_url
     else
       @errors = @post.errors.full_messages
@@ -41,7 +41,7 @@ class PostsController < ApplicationController
   private
 
     def post_params
-      params.require(:post).permit(:title, :url)
+      params.require(:post).permit(:title, :url, :user_idpos)
     end
 
 end

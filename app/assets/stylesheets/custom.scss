@@ -1,6 +1,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+nav {
+  margin-top: 32px;
+}
+
 footer {
   height: 100px;
 }
@@ -23,4 +27,8 @@ footer {
 
 .post {
   height: 115px;
+}
+
+.upvote {
+  font-size: 1.7em;
 }

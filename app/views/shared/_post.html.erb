@@ -1,6 +1,7 @@
 <article class="post">
  <h3 class="post_title"> <%= link_to(@post.title, @post.url) %> </h3>
-  <p class="date_author"> <%= @post.vote %> points by <%= @post.user.username %> <%= @post.created_at.strftime("%H") %> hours ago | <%= @post.comments.count %> <%= link_to("comments", new_post_comment_path(@post)) %> </p>
+ <span class="upvote">&#8682;</span>
+ <span class="date_author"> <%= @post.vote %> points by <%= @post.user.username %> <%= @post.created_at.strftime("%H") %> hours ago | <%= @post.comments.count %> <%= link_to("comments", new_post_comment_path(@post)) %> </span>
   <% if current_user?(@post.user) %>
     <%= link_to "Edit", edit_user_post_path(@post, @post), :class => "btn btn-default edit-button" %>
     <%= link_to "Delete", user_post_path(@post, @post), method: :delete, :class => "btn btn-default edit-button" %>

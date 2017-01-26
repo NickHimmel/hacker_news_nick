@@ -15,7 +15,7 @@
       </header>
       <nav>
         <ul class="nav-bar">
-          <li>new</li>
+          <li><%= link_to('new', posts_newest_path) %></li>
           <li> <%= link_to('comments', comments_path) %></li>
           <% if logged_in? %>
             <li> <%= link_to "submit", new_user_post_path(current_user) %> </li>

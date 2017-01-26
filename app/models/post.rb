@@ -3,6 +3,7 @@ class Post < ApplicationRecord
 
   belongs_to :user
   has_many :comments
+  has_many :votes, as: :votable
   after_initialize :set_defaults
 
   def set_defaults

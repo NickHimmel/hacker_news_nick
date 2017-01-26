@@ -1,6 +1,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+footer {
+  height: 100px;
+}
+
+.header {
+  height: 100px;
+}
 
 .logo {
   float: left;
@@ -12,4 +19,8 @@
 
 .nav-bar li{
   display: inline;
+}
+
+.post {
+  height: 115px;
 }

@@ -12,9 +12,9 @@ class CommentsController < ApplicationController
   def create
     # if logged_in?
       @post = Post.find(params[:post_id])
-      @comment = current_user.comments.create(comment_params)
+      @comment = current_user.comments.new(comment_params)
       @comment.post_id = params[:post_id]
-      if @comment == Comment.last
+      if @comment.save
         redirect_to "new"
       else
         @errors = @comment.errors.full_messages

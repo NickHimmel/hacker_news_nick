@@ -17,6 +17,7 @@ h1 {
 h3 {
   font-size: 1.23em;
   text-transform: uppercase;
+  letter-spacing: .04em;
 }
 
 nav {
@@ -29,8 +30,7 @@ footer {
 
 .main-container {
   background-color: #FFF;
-  border: 1px solid #595959;
-  border-radius: 3px;
+  text-align: center;
 }
 
 .header {
@@ -38,7 +38,7 @@ footer {
 }
 
 .logo {
-  float: left;
+  text-align: center;
 }
 
 .nav-bar {
@@ -49,10 +49,47 @@ footer {
   display: inline;
 }
 
-.post {
-  height: 115px;
-}
+@media (min-width: 750px) {
 
-.upvote {
-  font-size: 1.7em;
+  .logo {
+    text-align: left;
+    float: left;
+  }
+
+  .main-container {
+    background-color: #FFF;
+    border: 1px solid #595959;
+    border-radius: 3px;
+    text-align: left;
+  }
+
+  .post-container {
+      padding: 0;
+      margin: 0;
+  }
+
+  .post {
+    height: 115px;
+    border-bottom: 1px solid black;
+    padding-left: 25px;
+  }
+
+  .post_title {
+    margin-top: 35px;
+  }
+
+  .upvote {
+    font-size: 1.5em;
+    margin: 10px;
+  }
+
+  .date_author {
+    letter-spacing: .03em;
+    margin-right: 6px;
+  }
+
+  .edit-button {
+    margin: 2px;
+  }
+
 }

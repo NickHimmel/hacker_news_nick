@@ -10,7 +10,6 @@ class CommentsController < ApplicationController
   end
 
   def create
-    # if logged_in?
       @post = Post.find(params[:post_id])
       @comment = current_user.comments.new(comment_params)
       @comment.post_id = params[:post_id]
@@ -20,10 +19,6 @@ class CommentsController < ApplicationController
         @errors = @comment.errors.full_messages
         render "new"
       end
-    # else
-    #   flash[:danger] = "Please login or create an account"
-    #   redirect_to "new"
-    # end
   end
 
   def edit

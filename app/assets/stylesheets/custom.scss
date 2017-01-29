@@ -9,7 +9,7 @@ body {
 }
 
 a {
-  color: black;
+  color: #000;
 }
 
 a:hover {
@@ -73,6 +73,11 @@ footer {
 
 .form-container {
   margin-top: 25px;
+}
+
+.date_author {
+  font-size: .9em;
+  color: #858585;
 }
 @media (min-width: 755px) {
   .header {

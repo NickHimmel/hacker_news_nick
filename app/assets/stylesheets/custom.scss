@@ -72,13 +72,19 @@ footer {
 }
 
 .form-container {
-  margin-top: 25px;
+  margin: 25px;
+  padding: 20px;
+  width: 300px;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 3px;
 }
 
 .date_author {
   font-size: .9em;
   color: #858585;
 }
+
 @media (min-width: 755px) {
   .header {
     height: 100px;

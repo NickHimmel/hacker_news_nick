@@ -1,8 +1,7 @@
 <% @comments.each do |comment| %>
   <article class="comment">
-   <h3 class="comment_title"> <%= %> </h3>
-   <span class="upvote"> <%= %> </span>
-   <p class="comment-date-author"> <%=  comment.user.username %> <%= comment.created_at.strftime("%H") %> hours ago </p>
-    <p class="comment"> <%= comment.body %> </p>
+   <span class="comment_upvote"> <%= "\u21EA" %> </span>
+   <span class="date_author"> <%=  comment.user.username %> <%= comment.created_at.strftime("%H") %> hours ago </span>
+    <p class="comment_body"> <%= comment.body %> </p>
   </article>
 <% end %>

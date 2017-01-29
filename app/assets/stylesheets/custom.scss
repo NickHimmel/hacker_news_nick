@@ -85,6 +85,19 @@ footer {
   color: #858585;
 }
 
+.comment {
+  margin-top: 50px;
+  margin-left: 25px;
+}
+
+.comment_upvote {
+  font-size: 1.2em;
+}
+
+.comment_body {
+  margin: 20px 25px;
+}
+
 @media (min-width: 755px) {
   .header {
     height: 100px;
